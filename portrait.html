@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Portrait Effect</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Portrait card */
+.card {
+    width: 260px;
+    height: 360px;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+/* Image */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Glow animation */
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+        transparent,
+        rgba(0,255,255,0.7),
+        transparent);
+    animation: glow 2.5s infinite;
+}
+
+@keyframes glow {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <img src="portrait.jpg">
+</div>
+
+</body>
+</html>
